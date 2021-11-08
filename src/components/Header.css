@@ -1,12 +1,16 @@
 .Header {
   display: flex;
   justify-content: space-between;
-  /* background-color: black; */
+  background-color: black;
 }
 
 .Header h1 {
-  text-decoration: none;
   color: #fa2e2e;
+}
+
+.Header .header-links {
+  text-decoration: none;
+  color: white;
 }
 
 .Header .zebra-pic {
