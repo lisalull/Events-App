@@ -1,7 +1,20 @@
+import { Link } from "react-router-dom";
 import "./Header.css";
+import zebraImg from "../assets/fancy-zebra-2.svg";
 
 const Header = () => {
-  return <div className="Header">Header works</div>;
+  return (
+    <header className="Header">
+      <div>
+        <Link className="header-links" to="/">
+          <h1>Sebra Events</h1>
+        </Link>
+        <Link to="/events/bucketlist">See your saved Bucket List!</Link>
+      </div>
+
+      <img className="zebra-pic" src={zebraImg} alt="fancy zebra" />
+    </header>
+  );
 };
 
 export default Header;
