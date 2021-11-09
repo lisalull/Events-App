@@ -41,6 +41,7 @@ interface Price {
 
 export default interface SingleEventResponse {
   name: string;
+  id: string;
   url: string;
   images: Image[];
   dates: Dates;
