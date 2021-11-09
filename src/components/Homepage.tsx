@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Event from "../models/Event";
-import { getLocalEvents } from "../services/EventService";
+import { filterEvents, getLocalEvents } from "../services/EventService";
 import "./Homepage.css";
 import ResultList from "./ResultList";
 import SearchForm from "./SearchForm";
@@ -9,17 +10,33 @@ const Homepage = () => {
   const [location, setLocation] = useState("");
   const [events, setEvents] = useState<Event[]>([]);
 
+  const name: string | null = new URLSearchParams(useLocation().search).get(
+    "name"
+  );
+
+  const city: string | null = new URLSearchParams(useLocation().search).get(
+    "city"
+  );
+
+  const date: string | null = new URLSearchParams(useLocation().search).get(
+    "date"
+  );
+
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition((response) => {
-      const coords = `${response.coords.latitude},${response.coords.longitude}`;
-      setLocation(coords);
-      console.log(coords);
-      getLocalEvents(coords).then((response) => {
-        console.log(response);
+    if (!name && !city && !date) {
+      navigator.geolocation.getCurrentPosition((response) => {
+        const coords = `${response.coords.latitude},${response.coords.longitude}`;
+        setLocation(coords);
+        getLocalEvents(coords).then((response) => {
+          setEvents(response._embedded.events);
+        });
+      });
+    } else {
+      filterEvents({ name, city, date }).then((response) => {
         setEvents(response._embedded.events);
       });
-    });
-  }, []);
+    }
+  }, [name, city, date]);
 
   return (
     <div className="Homepage">

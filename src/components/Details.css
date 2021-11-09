@@ -1,3 +1,7 @@
 .Details h2 {
   color: #fa2e2e;
 }
+
+.Details img {
+  width: 300px;
+}
