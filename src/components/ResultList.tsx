@@ -9,7 +9,6 @@ interface Props {
 const ResultList = ({ events }: Props) => {
   return (
     <div className="ResultList">
-      <h2>Events in your area</h2>
       <ul>
         {events?.map((event) => (
           <Result event={event} key={event.id} />

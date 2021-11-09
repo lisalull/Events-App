@@ -1,3 +1,9 @@
+.ResultList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .ResultList h2 {
   color: #fa2e2e;
 }
