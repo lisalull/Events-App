@@ -1,0 +1,24 @@
+.Result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  background-color: rgb(58, 95, 165);
+  border: 1px solid white;
+}
+
+.Result .event-name {
+  font-weight: bolder;
+  font-size: large;
+  padding-bottom: 5px;
+}
+
+.Result .bucketed {
+  color: goldenrod;
+}
+
+.Result img {
+  width: 300px;
+  height: 200px;
+}

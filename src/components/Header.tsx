@@ -13,6 +13,7 @@ const Header = () => {
           See your saved Bucket List!
         </Link>
       </div>
+      <p>Powered by Ticket Master</p>
 
       <img className="zebra-pic" src={zebraImg} alt="fancy zebra" />
     </header>

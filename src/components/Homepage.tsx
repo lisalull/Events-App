@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Event from "../models/Event";
-import EventResponse from "../models/EventResponse";
 import { getLocalEvents } from "../services/EventService";
 import "./Homepage.css";
 import ResultList from "./ResultList";
@@ -25,6 +24,7 @@ const Homepage = () => {
   return (
     <div className="Homepage">
       <SearchForm />
+      <h2>Events in your area: </h2>
       <ResultList events={events} />
     </div>
   );
