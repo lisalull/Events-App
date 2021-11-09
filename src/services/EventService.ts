@@ -35,3 +35,26 @@ export const getEventDetails = (id: string): Promise<SingleEventResponse> => {
       return response.data;
     });
 };
+
+// search events
+export const filterEvents = (qsp: any): Promise<EventResponse> => {
+  let params: any = {
+    apikey: key,
+  };
+  if (qsp.name) {
+    params.keyword = qsp.name;
+  }
+  if (qsp.city) {
+    params.city = qsp.city;
+  }
+  if (qsp.date) {
+    params.startDateTime = `${qsp.date}T14:00:00Z`;
+  }
+  return axios
+    .get("https://app.ticketmaster.com/discovery/v2/events", {
+      params,
+    })
+    .then((response) => {
+      return response.data;
+    });
+};

@@ -26,6 +26,9 @@ function App() {
           <Route path="/events/bucketlist">
             <BucketList />
           </Route>
+          <Route path="/events/search">
+            <Homepage />
+          </Route>
           <Route path="/">
             <Redirect to="/" />
           </Route>
