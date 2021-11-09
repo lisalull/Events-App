@@ -2,10 +2,12 @@
   display: flex;
   justify-content: space-between;
   background-color: black;
+  position: relative;
 }
 
 .Header h1 {
   color: #fa2e2e;
+  margin: 10px 0px;
 }
 
 .Header .header-links {
@@ -15,4 +17,19 @@
 
 .Header .zebra-pic {
   width: 100px;
+}
+
+.Header .text {
+  position: absolute;
+  color: black;
+  z-index: 5;
+  right: 150px;
+  top: 30px;
+}
+
+.Header .bubble {
+  position: absolute;
+  z-index: 1;
+  right: 100px;
+  top: 20px;
 }

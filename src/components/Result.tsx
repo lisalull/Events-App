@@ -21,17 +21,18 @@ const Result = ({ event }: Props) => {
       >
         <p>See more details</p>
       </Link>
-      <p>
-        Add to Bucket List!{" "}
-        {!isInBucket(event?.id) ? (
-          <i className="fas fa-star" onClick={() => addToBucket(event)}></i>
-        ) : (
-          <i
-            className="fas fa-star bucketed"
-            onClick={() => removeFromBucket(event.id)}
-          ></i>
-        )}
-      </p>
+      {!isInBucket(event?.id) ? (
+        <i className="fas fa-star" onClick={() => addToBucket(event)}>
+          Add to Bucket List!
+        </i>
+      ) : (
+        <i
+          className="fas fa-star bucketed"
+          onClick={() => removeFromBucket(event.id)}
+        >
+          Remove from Bucket List
+        </i>
+      )}
     </div>
   );
 };

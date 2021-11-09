@@ -1,7 +1,24 @@
+.Details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .Details h2 {
   color: #fa2e2e;
 }
 
 .Details img {
   width: 300px;
+}
+
+.Details p {
+  margin: 10px;
+}
+
+.Details .ticketmaster {
+  text-decoration: none;
+  color: tomato;
+  font-weight: bold;
 }

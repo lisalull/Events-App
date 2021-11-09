@@ -41,7 +41,11 @@ const Homepage = () => {
   return (
     <div className="Homepage">
       <SearchForm />
-      <h2>Events in your area: </h2>
+      {!name && !city && !date ? (
+        <h2>Events in your area: </h2>
+      ) : (
+        <h2>Search Results: </h2>
+      )}
       <ResultList events={events} />
     </div>
   );
