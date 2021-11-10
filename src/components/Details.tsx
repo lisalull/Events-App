@@ -41,15 +41,23 @@ const Details = () => {
         <p>
           Price Range:{" "}
           {event?.priceRanges
-            ? `${event?.priceRanges[0].min} - ${event?.priceRanges[0].max}`
+            ? `$${event?.priceRanges[0].min} - $${event?.priceRanges[0].max}`
             : "TBD"}
         </p>
-        <p>{event?._embedded.venues[0].name}</p>
-        <p>
-          {event?._embedded.venues[0].address.line1},{" "}
-          {event?._embedded.venues[0].city.name},{" "}
-          {event?._embedded.venues[0].state.stateCode}
-        </p>
+        {event?._embedded ? (
+          <div>
+            <p>{event?._embedded.venues[0].name}</p>
+            <p>
+              {event?._embedded.venues[0].address.line1},{" "}
+              {event?._embedded.venues[0].city.name}
+              {event?._embedded.venues[0].state
+                ? `, ${event?._embedded.venues[0].state.stateCode}`
+                : ""}
+            </p>
+          </div>
+        ) : (
+          <p>Venue: TBD</p>
+        )}
       </div>
       <p>{event?.info}</p>
       <p>{event?.pleaseNote}</p>

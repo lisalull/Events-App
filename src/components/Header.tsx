@@ -6,7 +6,7 @@ import bubbleImg from "../assets/speech-bubble.svg";
 const Header = () => {
   return (
     <header className="Header">
-      <div>
+      <div className="title">
         <Link className="header-links" to="/">
           <h1>Sebra Events</h1>
         </Link>
