@@ -10,6 +10,7 @@ import Homepage from "./components/Homepage";
 import SearchForm from "./components/SearchForm";
 import Details from "./components/Details";
 import BucketList from "./components/BucketList";
+import FourOhFour from "./components/FourOhFour";
 
 function App() {
   return (
@@ -23,14 +24,14 @@ function App() {
           <Route path="/events/:id/details" exact>
             <Details />
           </Route>
-          <Route path="/events/bucketlist">
+          <Route path="/events/bucketlist" exact>
             <BucketList />
           </Route>
-          <Route path="/events/search">
+          <Route path="/events/search" exact>
             <Homepage />
           </Route>
           <Route path="/">
-            <Redirect to="/" />
+            <FourOhFour />
           </Route>
         </Switch>
       </Router>

@@ -17,7 +17,7 @@ const Header = () => {
 
       <p className="text">Powered by Ticket Master</p>
 
-      <img className="bubble" src={bubbleImg} alt="" />
+      <img className="bubble" src={bubbleImg} alt="speech bubble" />
       <img className="zebra-pic" src={zebraImg} alt="fancy zebra" />
     </header>
   );
