@@ -1,4 +1,4 @@
-.SearchForm {
+.SearchForm .inputs {
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -13,4 +13,19 @@
   background-color: tomato;
   color: white;
   cursor: pointer;
+  padding: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+  .SearchForm .inputs {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  .SearchForm button {
+    width: 75px;
+    display: inline;
+  }
 }

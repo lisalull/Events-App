@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Event from "../models/Event";
 import { filterEvents, getLocalEvents } from "../services/EventService";
+import FourOhFour from "./FourOhFour";
 import "./Homepage.css";
+import Popup from "./Popup";
 import ResultList from "./ResultList";
 import SearchForm from "./SearchForm";
 
@@ -33,20 +35,31 @@ const Homepage = () => {
       });
     } else {
       filterEvents({ name, city, date }).then((response) => {
-        setEvents(response._embedded.events);
+        if (response._embedded) {
+          setEvents(response._embedded.events);
+        } else {
+          // alert("No search results - please try a different query.");
+          setEvents([]);
+        }
       });
     }
   }, [name, city, date]);
 
   return (
     <div className="Homepage">
-      <SearchForm />
-      {!name && !city && !date ? (
-        <h2>Events in your area: </h2>
+      {events.length === 0 ? (
+        <Popup />
       ) : (
-        <h2>Search Results: </h2>
+        <>
+          <SearchForm />
+          {!name && !city && !date ? (
+            <h2>Events in your area: </h2>
+          ) : (
+            <h2>Search Results: </h2>
+          )}
+          <ResultList events={events} />
+        </>
       )}
-      <ResultList events={events} />
     </div>
   );
 };
