@@ -25,33 +25,37 @@ const SearchForm = () => {
 
   return (
     <form className="SearchForm" onSubmit={submitHandler}>
-      <label htmlFor="name">Name: </label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Enter Event Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <label htmlFor="city">City: </label>
-      <input
-        type="text"
-        name="city"
-        id="city"
-        placeholder="Enter City"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-      />
-      <label htmlFor="date">Date: </label>
-      <input
-        type="date"
-        name="date"
-        id="date"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-      />
-      <button>Search</button>
+      <div className="inputs">
+        <label htmlFor="name">Name: </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter Event Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <label htmlFor="city">City: </label>
+        <input
+          type="text"
+          name="city"
+          id="city"
+          placeholder="Enter City"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+        />
+        <label htmlFor="date">Date: </label>
+        <input
+          type="date"
+          name="date"
+          id="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
+      </div>
+      <div>
+        <button>Search</button>
+      </div>
     </form>
   );
 };
