@@ -22,7 +22,13 @@ const BucketListContextProvider = ({ children }: Props) => {
 
   return (
     <BucketListContext.Provider
-      value={{ bucketList, addToBucket, removeFromBucket, isInBucket }}
+      value={{
+        bucketList,
+        setBucketList,
+        addToBucket,
+        removeFromBucket,
+        isInBucket,
+      }}
     >
       {children}
     </BucketListContext.Provider>

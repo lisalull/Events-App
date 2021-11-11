@@ -35,6 +35,7 @@ const SearchForm = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+
         <label htmlFor="city">City: </label>
         <input
           type="text"
@@ -44,6 +45,7 @@ const SearchForm = () => {
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
+
         <label htmlFor="date">Date: </label>
         <input
           type="date"
@@ -53,7 +55,7 @@ const SearchForm = () => {
           onChange={(e) => setDate(e.target.value)}
         />
       </div>
-      <div>
+      <div className="button-container">
         <button>Search</button>
       </div>
     </form>
