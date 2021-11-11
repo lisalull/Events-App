@@ -14,3 +14,11 @@
 .BucketList .no-events {
   margin: 10px;
 }
+
+.BucketList .form {
+  margin: 10px;
+}
+
+.BucketList input {
+  padding: 5px;
+}

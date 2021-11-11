@@ -11,6 +11,7 @@ import SearchForm from "./components/SearchForm";
 import Details from "./components/Details";
 import BucketList from "./components/BucketList";
 import FourOhFour from "./components/FourOhFour";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <FourOhFour />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );
