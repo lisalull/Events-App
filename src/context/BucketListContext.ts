@@ -3,6 +3,7 @@ import Event from "../models/Event";
 
 interface BucketListContextModel {
   bucketList: Event[];
+  setBucketList: (events: Event[]) => void;
   addToBucket: (event: Event) => void;
   removeFromBucket: (id: string) => void;
   isInBucket: (id: string) => boolean;
@@ -10,6 +11,7 @@ interface BucketListContextModel {
 
 const defaultValues: BucketListContextModel = {
   bucketList: [],
+  setBucketList: () => {},
   addToBucket: () => {},
   removeFromBucket: () => {},
   isInBucket: () => false,
